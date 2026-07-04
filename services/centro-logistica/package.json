@@ -1,0 +1,17 @@
+{
+  "name": "centro-logistica",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "lab:delivery-events": "node src/delivery-events-lab.js",
+    "lab:communication-patterns": "node src/order-created-lab.js",
+    "lab:backpressure": "node src/backpressure-lab.js",
+    "lab:operational-pressure": "node src/operational-pressure-lab.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

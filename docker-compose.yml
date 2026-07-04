@@ -1,0 +1,53 @@
+services:
+  gestor-flota:
+    image: node:22-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm start"
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./services/gestor-flota:/app
+
+  centro-logistica:
+    image: node:22-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm start"
+    environment:
+      PLANIFICADOR_RUTAS_URL: http://planificador-rutas:8000
+      ROUTE_PLANNER_TIMEOUT_MS: 500
+      ROUTE_PLANNER_RETRIES: 2
+      ROUTE_PLANNER_BACKOFF_MS: 100
+    ports:
+      - "8002:8000"
+    volumes:
+      - ./services/centro-logistica:/app
+    depends_on:
+      - planificador-rutas
+
+  monitor-telemetria:
+    image: node:22-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm start"
+    ports:
+      - "50051:50051"
+    volumes:
+      - ./services/monitor-telemetria:/app
+
+  planificador-rutas:
+    image: node:22-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm start"
+    ports:
+      - "8003:8000"
+    volumes:
+      - ./services/planificador-rutas:/app
+
+  observability-platform:
+    image: node:22-alpine
+    working_dir: /services/observability-platform
+    command: npm start
+    ports:
+      - "8010:8010"
+    volumes:
+      - ./services/observability-platform:/services/observability-platform:ro
+      - ./services/monitor-telemetria/src:/services/monitor-telemetria/src:ro

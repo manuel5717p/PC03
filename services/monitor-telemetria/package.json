@@ -1,0 +1,25 @@
+{
+  "name": "monitor-telemetria",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "lab:telemetry-stream": "node src/telemetry-stream-simulator.js",
+    "lab:telemetry-pressure": "node src/telemetry-pressure-lab.js",
+    "lab:physical-time": "node src/physical-time-lab.js",
+    "lab:clock-sync": "node src/clock-sync-lab.js",
+    "lab:lamport-ordering": "node src/lamport-ordering-lab.js",
+    "lab:vector-clocks": "node src/vector-clocks-lab.js",
+    "lab:mutual-exclusion": "node src/mutual-exclusion-lab.js",
+    "lab:distributed-locks": "node src/distributed-locks-lab.js",
+    "lab:leader-election": "node src/leader-election-lab.js",
+    "lab:distributed-coordination": "node src/distributed-coordination-lab.js",
+    "lab:coordination-integration": "node src/coordination-integration-lab.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.13.4",
+    "@grpc/proto-loader": "^0.7.15"
+  }
+}

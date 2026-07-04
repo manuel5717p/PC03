@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AURA Observability Platform</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero panel">
+        <p class="eyebrow">Cabina educativa AURA</p>
+        <h1>AURA Observability Platform</h1>
+        <p>Explora sincronización, incertidumbre y decisiones operacionales sin vender los timestamps como verdad absoluta.</p>
+      </section>
+
+      <section class="control-panel panel">
+        <div>
+          <p class="eyebrow" id="lab-session">Sesión</p>
+          <h2 id="lab-title">Laboratorio de observabilidad</h2>
+          <p id="lab-purpose">Seleccione un laboratorio y un modo para inspeccionar el envelope compartido: resumen, observaciones, métricas y JSON crudo.</p>
+          <p class="foundation-note" id="lab-relationship"></p>
+        </div>
+        <div class="control-actions">
+          <label for="lab-select">Laboratorio</label>
+          <select id="lab-select"></select>
+          <label for="mode-select">Modo</label>
+          <select id="mode-select"></select>
+          <button id="run-mode" type="button">Ejecutar modo</button>
+        </div>
+      </section>
+
+      <section class="progression panel" aria-label="Progresión Unidad 3">
+        <span>Sesión 21 · Fundamento: tiempo físico e incertidumbre</span>
+        <span>Sesión 22 · Sincronización: ventanas y confianza</span>
+        <span>Sesión 23 · Orden lógico: relojes de Lamport</span>
+        <span>Sesión 24 · Causalidad: vector clocks</span>
+        <span>Sesión 25 · Exclusión mutua distribuida</span>
+        <span>Sesión 26 · Implementada: locks, leases y vencimiento</span>
+        <span>Sesión 27 · Implementada: elección de líder y detectores de fallas</span>
+          <span>Sesión 28 · Implementada: coordinación distribuida en escenarios reales</span>
+          <span>Sesión 29 · Actual: laboratorio integrador para PC3</span>
+      </section>
+
+      <section id="status" class="status panel">Listo para ejecutar el laboratorio.</section>
+
+      <section class="grid">
+        <article class="panel card" id="uncertainty-card">
+          <h3>Resumen del envelope</h3>
+          <div id="summary-content">Sin datos todavía.</div>
+        </article>
+
+        <article class="panel card learning-card">
+          <h3>Foco de aprendizaje</h3>
+          <div id="learning-content">Ejecute un modo para ver el objetivo, las métricas clave y la conclusión.</div>
+        </article>
+
+        <article class="panel card">
+          <h3>Observaciones y recomendaciones</h3>
+          <div id="observations-content">Sin datos todavía.</div>
+        </article>
+
+        <article class="panel card">
+          <h3>Métricas</h3>
+          <div id="metrics-content">Sin datos todavía.</div>
+        </article>
+
+        <article class="panel card">
+          <h3>Línea de tiempo</h3>
+          <div id="timeline-content">Sin datos todavía.</div>
+        </article>
+      </section>
+
+      <section class="panel raw-panel">
+        <h3>JSON crudo</h3>
+        <pre id="raw-json">{}</pre>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

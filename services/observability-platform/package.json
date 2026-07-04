@@ -1,0 +1,11 @@
+{
+  "name": "observability-platform",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "smoke": "node scripts/smoke.js",
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package aura.telemetry;
+
+service TelemetryService {
+  rpc StreamTelemetry(stream TelemetryPacket) returns (StreamAck) {}
+}
+
+message Location {
+  double latitude = 1;
+  double longitude = 2;
+}
+
+message TelemetryPacket {
+  string drone_id = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  Location location = 3;
+  double battery_level = 4;
+  string status = 5;
+}
+
+message StreamAck {
+  bool success = 1;
+  string message = 2;
+}
